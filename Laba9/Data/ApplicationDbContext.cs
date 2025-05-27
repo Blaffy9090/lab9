@@ -10,10 +10,10 @@ namespace Laba9.Data
         {
         }
 
-        public DbSet<Tovar> tovars {  get; set; }
+        public DbSet<Tovar> Tovary {  get; set; }
 
-        public DbSet<Zakaz> zakazs { get; set; }
+        public DbSet<Zakaz> Zakazy { get; set; }
 
-        public DbSet<KategoriyaTovara> kategoriyas { get; set; }
+        public DbSet<KategoriyaTovara> KategoriiTovarov { get; set; }
     }
 }

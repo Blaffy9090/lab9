@@ -20,7 +20,12 @@ namespace Laba9.Controllers
         // GET: Zakazs
         public async Task<IActionResult> Index(int? id)
         {
-            if (id == null) return NotFound();
+            if (id == null)
+            {
+                return View(await _context.Zakazy
+                .Include(z => z.Tovar)
+                .ToListAsync());
+            }
 
             var zakazy = await _context.Zakazy
                 .Where(z => z.TovarId == id)
@@ -32,6 +37,22 @@ namespace Laba9.Controllers
             ViewBag.NazvanieTovara = tovar?.NazvanieTovara;
             
             return View(zakazy);
+        }
+
+        // GET: Zakazs/Details
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null){ return NotFound(); }
+
+            var zakaz = await _context.Zakazy
+                .FirstOrDefaultAsync(z => z.ZakazId == id);
+
+            if (zakaz.Tovar == null)
+            {
+                zakaz.Tovar = _context.Tovary.FirstOrDefault(t => t.TovarId == zakaz.TovarId);
+            }
+
+            return View(zakaz);
         }
 
         // GET: Zakazs/Create

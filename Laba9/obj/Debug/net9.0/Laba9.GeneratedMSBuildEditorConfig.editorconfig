@@ -40,24 +40,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovara/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyYVxDcmVhdGUuY3NodG1s
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovarov/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyb3ZcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovara/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyYVxEZWxldGUuY3NodG1s
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovarov/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyb3ZcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovara/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyYVxEZXRhaWxzLmNzaHRtbA==
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovarov/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyb3ZcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovara/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyYVxFZGl0LmNzaHRtbA==
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovarov/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyb3ZcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovara/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyYVxJbmRleC5jc2h0bWw=
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/KategoriyaTovarov/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2F0ZWdvcml5YVRvdmFyb3ZcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Documents/repos/Laba9/Laba9/Views/Shared/Error.cshtml]
@@ -72,44 +72,44 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovar/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovars/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovar/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcRGVsZXRlLmNzaHRtbA==
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovars/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovar/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcRGV0YWlscy5jc2h0bWw=
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovars/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovar/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcRWRpdC5jc2h0bWw=
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovars/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovar/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJcSW5kZXguY3NodG1s
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Tovars/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG92YXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakaz/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcQ3JlYXRlLmNzaHRtbA==
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakazs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakaz/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcRGVsZXRlLmNzaHRtbA==
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakazs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakaz/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcRGV0YWlscy5jc2h0bWw=
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakazs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakaz/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcRWRpdC5jc2h0bWw=
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakazs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakaz/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpcSW5kZXguY3NodG1s
+[C:/Users/user/Documents/repos/Laba9/Laba9/Views/Zakazs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcWmFrYXpzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/user/Documents/repos/Laba9/Laba9/Views/_ViewImports.cshtml]

@@ -14,6 +14,9 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.Tovar.NazvanieTovara)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Kolichestvo)
             </th>
             <th>
@@ -28,6 +31,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tovar.NazvanieTovara)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Kolichestvo)
             </td>
@@ -38,7 +44,7 @@
                 @Html.DisplayFor(modelItem => item.ObshayaStoimost)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ZakazId">Редактировать</a> |
+                <a asp-action="Create" asp-route-id="@item.ZakazId">Редактировать</a> |
                 <a asp-action="Details" asp-route-id="@item.ZakazId">Детали</a> |
                 <a asp-action="Delete" asp-route-id="@item.ZakazId">Удалить</a>
             </td>

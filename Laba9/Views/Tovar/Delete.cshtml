@@ -1,0 +1,43 @@
+﻿@model Laba9.Data.Tovar
+
+@{
+    ViewData["Title"] = "Удалить товар";
+}
+
+<h1>Удаление товара</h1>
+<h3>Вы уверены, что хотите удалить этот товар?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NazvanieTovara)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NazvanieTovara)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OpisanieTovara)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OpisanieTovara)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        <dt class="col-sm-2">
+            Категория
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KategoriyaTovara.NazvanieKategorii)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TovarId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад к списку товаров</a>
+    </form>
+</div>

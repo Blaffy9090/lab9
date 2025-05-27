@@ -1,0 +1,47 @@
+﻿@model Zakaz
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удалить заказ</h1>
+
+<h3>Вы уверены что хотите удалить этот заказ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kolichestvo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kolichestvo)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataZakaza)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataZakaza)
+        </dd>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ObshayaStoimost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ObshayaStoimost)
+        </dd>
+        
+        <dt class="col-sm-2">
+            Товар
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Tovar?.NazvanieTovara
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ZakazId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index" asp-route-id="@Model.TovarId">Назад к списку</a>
+    </form>
+</div>

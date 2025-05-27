@@ -1,0 +1,32 @@
+﻿@model KategoriyaTovara
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Удалить категорию товара</h1>
+
+<h3>Вы уверены, что хотите удалить эту категорию?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NazvanieKategorii)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NazvanieKategorii)
+        </dd>
+        <dt class="col-sm-2">
+            Количество товаров
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Tovary?.Count()
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="KategoriyaTovaraId" />
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Возврат к списку категорий</a>
+    </form>
+</div>

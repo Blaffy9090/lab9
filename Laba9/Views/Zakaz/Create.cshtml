@@ -1,0 +1,46 @@
+﻿@model Zakaz
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Создать заказ</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                <label asp-for="TovarId" class="control-label"></label>
+                <select asp-for="TovarId" class="form-control" asp-items="ViewBag.TovarId"></select>
+                <span asp-validation-for="TovarId" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Kolichestvo" class="control-label"></label>
+                <input asp-for="Kolichestvo" class="form-control" />
+                <span asp-validation-for="Kolichestvo" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="DataZakaza" class="control-label"></label>
+                <input asp-for="DataZakaza" type="datetime-local" class="form-control" />
+                <span asp-validation-for="DataZakaza" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Создать" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-route-id="@ViewBag.TovarId">Назад к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

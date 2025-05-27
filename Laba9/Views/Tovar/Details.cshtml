@@ -1,0 +1,40 @@
+﻿@model Laba9.Data.Tovar
+
+@{
+    ViewData["Title"] = "Просмотр товара";
+}
+
+<h1>Детали товара</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NazvanieTovara)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NazvanieTovara)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.OpisanieTovara)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.OpisanieTovara)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+        <dt class="col-sm-2">
+            Категория
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KategoriyaTovara.NazvanieKategorii)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TovarId">Редактировать</a> |
+    <a asp-action="Index">Назад к списку товаров</a>
+</div>

@@ -1,0 +1,45 @@
+﻿@model Laba9.Data.Tovar
+
+@{
+    ViewData["Title"] = "Добавить товар";
+}
+
+<h1>Добавление товара</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NazvanieTovara" class="control-label"></label>
+                <input asp-for="NazvanieTovara" class="form-control" />
+                <span asp-validation-for="NazvanieTovara" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpisanieTovara" class="control-label"></label>
+                <textarea asp-for="OpisanieTovara" class="form-control"></textarea>
+                <span asp-validation-for="OpisanieTovara" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cena" class="control-label"></label>
+                <input asp-for="Cena" class="form-control" type="number" step="0.01" />
+                <span asp-validation-for="Cena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KategoriyaTovaraId" class="control-label"></label>
+                <select asp-for="KategoriyaTovaraId" class="form-control" asp-items="ViewBag.KategoriyaTovaraId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Назад к списку товаров</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

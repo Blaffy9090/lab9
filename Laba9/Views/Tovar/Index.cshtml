@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Laba9.Data.Tovar>
+
+@{
+    ViewData["Title"] = "Список товаров";
+}
+
+<h1>Список товаров</h1>
+
+<p>
+    <a asp-action="Create">Добавить новый товар</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NazvanieTovara)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpisanieTovara)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cena)
+            </th>
+            <th>
+                Категория
+            </th>
+            <th>
+                Количество заказов
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazvanieTovara)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpisanieTovara)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cena)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KategoriyaTovara.NazvanieKategorii)
+            </td>
+            <td>
+                @item.Zakazy?.Count()
+            </td>
+            <td>
+                <a asp-controller="Zakazs" asp-action="Index" asp-route-id="@item.TovarId">Заказы</a> |
+                <a asp-action="Edit" asp-route-id="@item.TovarId">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.TovarId">Просмотр</a> |
+                <a asp-action="Delete" asp-route-id="@item.TovarId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

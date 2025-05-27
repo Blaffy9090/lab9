@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Zakaz>
+
+@{
+    ViewData["Title"] = "Заказы для товара: " + ViewBag.NazvanieTovara;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" asp-route-id="@ViewBag.TovarId">Создать новый</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Kolichestvo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataZakaza)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ObshayaStoimost)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kolichestvo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataZakaza)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ObshayaStoimost)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ZakazId">Редактировать</a> |
+                <a asp-action="Details" asp-route-id="@item.ZakazId">Детали</a> |
+                <a asp-action="Delete" asp-route-id="@item.ZakazId">Удалить</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div>
+    <a asp-controller="Tovars" asp-action="Index">К списку товаров</a>
+</div>

@@ -1,0 +1,11 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.json
+/.vs/Laba9/FileContentIndex
+/.vs/Laba9/FileContentIndex/8a0f6aa1-5c37-4d14-aad1-50b2800c55f4.vsidx
+/.vs/Laba9/FileContentIndex/d643f6ca-1b19-45d3-a3bf-154bf38a0cd7.vsidx
+/.vs/Laba9/FileContentIndex/d78b900d-8d80-4383-84d6-1d46d308409f.vsidx
+/.vs/Laba9/FileContentIndex/e30aa640-d46b-44ed-84b8-a895f730f68d.vsidx
+/.vs/Laba9/FileContentIndex/e6879ece-b862-4456-9f9d-f34da718090a.vsidx

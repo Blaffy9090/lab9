@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hovro\\source\\repos\\Laba9\\Laba9\\Laba9.csproj": {}
+    "C:\\Users\\user\\Documents\\repos\\Laba9\\Laba9\\Laba9.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hovro\\source\\repos\\Laba9\\Laba9\\Laba9.csproj": {
+    "C:\\Users\\user\\Documents\\repos\\Laba9\\Laba9\\Laba9.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hovro\\source\\repos\\Laba9\\Laba9\\Laba9.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\repos\\Laba9\\Laba9\\Laba9.csproj",
         "projectName": "Laba9",
-        "projectPath": "C:\\Users\\Hovro\\source\\repos\\Laba9\\Laba9\\Laba9.csproj",
-        "packagesPath": "C:\\Users\\Hovro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hovro\\source\\repos\\Laba9\\Laba9\\obj\\",
+        "projectPath": "C:\\Users\\user\\Documents\\repos\\Laba9\\Laba9\\Laba9.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Documents\\repos\\Laba9\\Laba9\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "D:\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Hovro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

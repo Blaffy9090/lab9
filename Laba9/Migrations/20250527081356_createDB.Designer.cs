@@ -4,6 +4,7 @@ using Laba9.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Laba9.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250527081356_createDB")]
+    partial class createDB
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,83 +25,74 @@ namespace Laba9.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Laba9.Data.Abonent", b =>
+            modelBuilder.Entity("Laba9.Data.KategoriyaTovara", b =>
                 {
-                    b.Property<int>("AbonentId")
+                    b.Property<int>("KategoriyaTovaraId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AbonentId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KategoriyaTovaraId"));
 
-                    b.Property<string>("Adres")
+                    b.Property<string>("NazvanieKategorii")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Familiya")
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("KategoriyaTovaraId");
 
-                    b.Property<string>("Imya")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Otchestvo")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Telefon")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AbonentId");
-
-                    b.ToTable("abonents");
+                    b.ToTable("KategoriiTovarov");
                 });
 
-            modelBuilder.Entity("Laba9.Data.Pokazanie", b =>
+            modelBuilder.Entity("Laba9.Data.Tovar", b =>
                 {
-                    b.Property<int>("PokazanieId")
+                    b.Property<int>("TovarId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PokazanieId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TovarId"));
 
-                    b.Property<DateTime>("DataPokazaniya")
-                        .HasColumnType("datetime2");
+                    b.Property<decimal>("Cena")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("SchetchikId")
+                    b.Property<int>("KategoriyaTovaraId")
                         .HasColumnType("int");
 
-                    b.Property<float>("ZnacheniePokazaniya")
-                        .HasColumnType("real");
+                    b.Property<string>("NazvanieTovara")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("PokazanieId");
+                    b.Property<string>("OpisanieTovara")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("SchetchikId");
+                    b.HasKey("TovarId");
 
-                    b.ToTable("pokazanies");
+                    b.HasIndex("KategoriyaTovaraId");
+
+                    b.ToTable("Tovary");
                 });
 
-            modelBuilder.Entity("Laba9.Data.Schetchik", b =>
+            modelBuilder.Entity("Laba9.Data.Zakaz", b =>
                 {
-                    b.Property<int>("SchetchikId")
+                    b.Property<int>("ZakazId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SchetchikId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ZakazId"));
 
-                    b.Property<int>("AbonentId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataUstanovki")
+                    b.Property<DateTime>("DataZakaza")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("NomerSchetchika")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Kolichestvo")
+                        .HasColumnType("int");
 
-                    b.Property<string>("TipSchetchika")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<decimal>("ObshayaStoimost")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("SchetchikId");
+                    b.Property<int>("TovarId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("AbonentId");
+                    b.HasKey("ZakazId");
 
-                    b.ToTable("schetchiks");
+                    b.HasIndex("TovarId");
+
+                    b.ToTable("Zakazy");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -303,26 +297,26 @@ namespace Laba9.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Laba9.Data.Pokazanie", b =>
+            modelBuilder.Entity("Laba9.Data.Tovar", b =>
                 {
-                    b.HasOne("Laba9.Data.Schetchik", "Schetchik")
-                        .WithMany("Pokazanie")
-                        .HasForeignKey("SchetchikId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("Laba9.Data.KategoriyaTovara", "KategoriyaTovara")
+                        .WithMany("Tovary")
+                        .HasForeignKey("KategoriyaTovaraId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Schetchik");
+                    b.Navigation("KategoriyaTovara");
                 });
 
-            modelBuilder.Entity("Laba9.Data.Schetchik", b =>
+            modelBuilder.Entity("Laba9.Data.Zakaz", b =>
                 {
-                    b.HasOne("Laba9.Data.Abonent", "Abonent")
-                        .WithMany("Schetchiks")
-                        .HasForeignKey("AbonentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                    b.HasOne("Laba9.Data.Tovar", "Tovar")
+                        .WithMany("Zakazy")
+                        .HasForeignKey("TovarId")
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Abonent");
+                    b.Navigation("Tovar");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -376,14 +370,14 @@ namespace Laba9.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Laba9.Data.Abonent", b =>
+            modelBuilder.Entity("Laba9.Data.KategoriyaTovara", b =>
                 {
-                    b.Navigation("Schetchiks");
+                    b.Navigation("Tovary");
                 });
 
-            modelBuilder.Entity("Laba9.Data.Schetchik", b =>
+            modelBuilder.Entity("Laba9.Data.Tovar", b =>
                 {
-                    b.Navigation("Pokazanie");
+                    b.Navigation("Zakazy");
                 });
 #pragma warning restore 612, 618
         }

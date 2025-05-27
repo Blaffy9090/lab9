@@ -5,6 +5,8 @@ namespace Laba9.Data
 {
     public class Zakaz
     {
+        private decimal obshayaStoimost;
+
         public int ZakazId { get; set; } // КодЗаказа (PK)
 
         [Display(Name = "Количество")]
@@ -15,7 +17,14 @@ namespace Laba9.Data
 
         [Display(Name = "Общая стоимость")]
         [Column(TypeName = "decimal(18,2)")]
-        public decimal ObshayaStoimost => CenaTovara * Kolichestvo; // Вычисляемое поле
+        public decimal ObshayaStoimost
+        {
+            get
+            {
+                return CenaTovara * Kolichestvo;
+            }
+            set => obshayaStoimost = value;
+        }
 
         // Внешний ключ и навигационное свойство
         public int TovarId { get; set; }

@@ -6,28 +6,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Laba9.Migrations
 {
     /// <inheritdoc />
-    public partial class Migr1 : Migration
+    public partial class createDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "abonents",
-                columns: table => new
-                {
-                    AbonentId = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Familiya = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Imya = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Otchestvo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Adres = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Telefon = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_abonents", x => x.AbonentId);
-                });
-
             migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
@@ -68,25 +51,16 @@ namespace Laba9.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "schetchiks",
+                name: "KategoriiTovarov",
                 columns: table => new
                 {
-                    SchetchikId = table.Column<int>(type: "int", nullable: false)
+                    KategoriyaTovaraId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    NomerSchetchika = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TipSchetchika = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DataUstanovki = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AbonentId = table.Column<int>(type: "int", nullable: false)
+                    NazvanieKategorii = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_schetchiks", x => x.SchetchikId);
-                    table.ForeignKey(
-                        name: "FK_schetchiks_abonents_AbonentId",
-                        column: x => x.AbonentId,
-                        principalTable: "abonents",
-                        principalColumn: "AbonentId",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_KategoriiTovarov", x => x.KategoriyaTovaraId);
                 });
 
             migrationBuilder.CreateTable(
@@ -196,24 +170,47 @@ namespace Laba9.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "pokazanies",
+                name: "Tovary",
                 columns: table => new
                 {
-                    PokazanieId = table.Column<int>(type: "int", nullable: false)
+                    TovarId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DataPokazaniya = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ZnacheniePokazaniya = table.Column<float>(type: "real", nullable: false),
-                    SchetchikId = table.Column<int>(type: "int", nullable: false)
+                    NazvanieTovara = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OpisanieTovara = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Cena = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    KategoriyaTovaraId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_pokazanies", x => x.PokazanieId);
+                    table.PrimaryKey("PK_Tovary", x => x.TovarId);
                     table.ForeignKey(
-                        name: "FK_pokazanies_schetchiks_SchetchikId",
-                        column: x => x.SchetchikId,
-                        principalTable: "schetchiks",
-                        principalColumn: "SchetchikId",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Tovary_KategoriiTovarov_KategoriyaTovaraId",
+                        column: x => x.KategoriyaTovaraId,
+                        principalTable: "KategoriiTovarov",
+                        principalColumn: "KategoriyaTovaraId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Zakazy",
+                columns: table => new
+                {
+                    ZakazId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Kolichestvo = table.Column<int>(type: "int", nullable: false),
+                    DataZakaza = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ObshayaStoimost = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TovarId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Zakazy", x => x.ZakazId);
+                    table.ForeignKey(
+                        name: "FK_Zakazy_Tovary_TovarId",
+                        column: x => x.TovarId,
+                        principalTable: "Tovary",
+                        principalColumn: "TovarId",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -256,14 +253,14 @@ namespace Laba9.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_pokazanies_SchetchikId",
-                table: "pokazanies",
-                column: "SchetchikId");
+                name: "IX_Tovary_KategoriyaTovaraId",
+                table: "Tovary",
+                column: "KategoriyaTovaraId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_schetchiks_AbonentId",
-                table: "schetchiks",
-                column: "AbonentId");
+                name: "IX_Zakazy_TovarId",
+                table: "Zakazy",
+                column: "TovarId");
         }
 
         /// <inheritdoc />
@@ -285,7 +282,7 @@ namespace Laba9.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "pokazanies");
+                name: "Zakazy");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -294,10 +291,10 @@ namespace Laba9.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "schetchiks");
+                name: "Tovary");
 
             migrationBuilder.DropTable(
-                name: "abonents");
+                name: "KategoriiTovarov");
         }
     }
 }
